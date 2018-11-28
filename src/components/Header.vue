@@ -3,15 +3,15 @@
         <label>Attack:</label>
         <input type="number"
             v-model.number="filter.attack"
-            step="50">
+            step="25">
 
-        <label>Attack:</label>
-        <select v-model="filter.type">
+        <label>Type:</label>
+        <select v-model="filter.type_1">
             <option value="">All</option>
             <option
-                v-for="type in types"
-                v-bind:key="type"
-                v-bind:value="type">
+                v-for="type_1 in types"
+                v-bind:key="type_1"
+                v-bind:value="type_1">
                 {{type}}
             </option>
         </select>
