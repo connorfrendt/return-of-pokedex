@@ -1,57 +1,52 @@
 <template>
   <div id="app">
     <Header
-      v-bind:sort="sort"
       v-bind:filter="filter"
-      v-bind:types="pokemonTypes"/>
+      v-bind:types="pokemonTypes"
+    />
 
-    <Pokedex v-bind:pokedex="pokedex"/>
+    <Pokedex v-bind:pokemons="pokemons"/>
   </div>
 </template>
 
 <script>
-import pokedexApi from './services/pokedex-api.js';
 import Pokedex from './components/Pokedex.vue';
 import Header from './components/Header.vue';
+import pokemons from './services/pokedex.js';
 
 export default {
   data() {
     return {
-      pokedex: pokedexApi.getPokedex(),
+      pokemons,
       filter: {
-        pokemon: '',
+        name: '',
         type: '',
-        attack: 0,
-        defense: 0,
-      },
-      sort: {
-        field: 'pokemon',
-        direction: 1
       }
-    }
+    };
   },
   components: {
     Header,
     Pokedex
   },
   computed: {
-    pokemonTypes() {
-      const types = [];
-      this.pokedex.forEach(pokemon => {
-        if(!types.includes(pokemon.type_1)) {
-          types.push(pokemon.type_1);
-        }
-      });
-      return types;
-    },
-    filteredPokemon() {
-      return this.pokedex.filter(pokemon => {
-        const hasAttack = !this.filter.attack || pokemon.attack >= this.filter.attack;
-        return hasAttack;
-      });
+      pokemonTypes() {
+        const types = [];
+        this.pokemons.forEach(pokemon => {
+          if(!types.includes(pokemon.type_1)) {
+            types.push(pokemon.type_1);
+          }
+        });
+        // console.log(types);
+        return types;
+      },
+      filteredPokemons() {
+        return this.pokemons.filter(pokemon => {
+          const hasName = !this.filter.name || pokemon.pokemon.includes(this.filter.name);
+          return hasName;
+        });
+      }
     }
-  }
-}
+  };
 
 </script>
 

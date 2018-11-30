@@ -1,20 +1,20 @@
 <template>
     <ul>
-        <Pokedex v-for="pokemon in pokedex"
-            v-bind:key="pokemon.name"
+        <Pokemon v-for="pokemon in pokemons"
+            v-bind:key="pokemon.pokemon"
             v-bind:pokemon="pokemon"/>
     </ul>
 </template>
 
 <script>
-import Pokedex from './Pokemon.vue';
+import Pokemon from './Pokemon.vue';
 
 export default {
     props: {
-        pokedex: Array
+        pokemons: Array
     },
     components: {
-        Pokedex
+        Pokemon
     }
 };
 </script>
