@@ -21,6 +21,7 @@ export default {
       filter: {
         name: '',
         type: '',
+        minAttack: '',
       },
       sort: {
         field: 'name',
@@ -46,7 +47,8 @@ export default {
       return this.pokemons.filter(pokemon => {
         const hasType = !this.filter.type || pokemon.type_1.includes(this.filter.type);
         const hasName = !this.filter.name || pokemon.pokemon.includes(this.filter.name);
-        return hasType && hasName;
+        const hasMinAttack = !this.filter.minAttack || pokemon.attack >= this.filter.minAttack;
+        return hasType && hasName && hasMinAttack;
       });
     },
     sortedPokemons() {

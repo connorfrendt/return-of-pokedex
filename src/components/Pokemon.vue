@@ -1,10 +1,13 @@
 <template>
     <li>
         <img style="height: 150px" v-bind:src="pokemon.url_image"/>
-        <h3> {{pokemon.pokemon}} </h3>
-        <p>Type: {{pokemon.type_1}}, {{pokemon.type_2}} </p>
-        <p>Attack: {{ pokemon.attack }} </p>
-        <p>Attack: {{ pokemon.attack }} </p>
+        <h3> {{pokemon.pokemon}}</h3>
+        <p>Type: {{pokemon.type_1}}, {{pokemon.type_2}}</p>
+        <p>Attack: {{pokemon.attack}}</p>
+        <p>Defense: {{pokemon.defense}}</p>
+        <p>Special Attack: {{pokemon.special_attack}}</p>
+        <p>Special Defense: {{pokemon.special_defense}}</p>
+        <p>Speed: {{pokemon.speed}}</p>
     </li>
 </template>
 

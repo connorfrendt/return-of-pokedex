@@ -2,7 +2,7 @@
     <header>
         <label>
             Name:
-            <input type="text" v-model="filter.name">
+            <input type="text" placeholder="Pokemon Name" v-model="filter.name">
         </label>
         <label>
             Type:
@@ -15,6 +15,14 @@
                     {{type}}
                 </option>
             </select>
+        </label>
+        <label>
+            Min Attack:
+            <input type="number" step="10" placeholder="0" v-model="filter.minAttack">
+        </label>
+        <label>
+            Max Attack:
+            <input type="number" step="10" placeholder="0" v-model="filter.attack">
         </label>
     </header>
 </template>
