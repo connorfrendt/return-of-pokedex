@@ -1,10 +1,10 @@
 <template>
-    <ul>
-        <img v-bind:src="pokemon.url_image"/>
+    <li>
+        <img style="height: 150px" v-bind:src="pokemon.url_image"/>
         <h3> {{ pokemon.pokemon }} </h3>
         <p>Attack: {{ pokemon.attack }} </p>
         <p>Defense: {{ pokemon.defense }} </p>
-    </ul>
+    </li>
 </template>
 
 <script>
@@ -15,12 +15,24 @@ export default {
 };
 </script>
 
-<style scoped>
-ul {
-    display: grid;
-    grid-template-columns: repeat(autofit, minmax(200px, 1fr));
-    list-style: none;
-    margin: 0;
-    padding: 0;
+<style>
+li {
+    border: 3px solid red;
+    margin: 10px auto;
+    padding: 0 30px;
+    text-align: center;
+}
+
+img {
+    border: 2px dashed goldenrod;
+}
+
+h3 {
+    border: 2px solid blue;
+}
+
+p {
+    margin: 10px;
+    background: red;
 }
 </style>
