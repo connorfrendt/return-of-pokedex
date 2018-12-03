@@ -30,7 +30,7 @@ export default {
 
 <style scoped>
 header {
-    background: steelblue;
+    background:-webkit-linear-gradient(bottom, rgb(0, 0, 0), rgb(255, 0, 0));
     color: white;
     padding: 10px;
 }

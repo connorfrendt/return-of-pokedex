@@ -1,9 +1,10 @@
 <template>
     <li>
         <img style="height: 150px" v-bind:src="pokemon.url_image"/>
-        <h3> {{ pokemon.pokemon }} </h3>
-        <p>Type: {{ pokemon.type_1 }} </p>
-        <p>Defense: {{ pokemon.defense }} </p>
+        <h3> {{pokemon.pokemon}} </h3>
+        <p>Type: {{pokemon.type_1}}, {{pokemon.type_2}} </p>
+        <p>Attack: {{ pokemon.attack }} </p>
+        <p>Attack: {{ pokemon.attack }} </p>
     </li>
 </template>
 
@@ -28,11 +29,12 @@ img {
 }
 
 h3 {
-    border: 2px solid blue;
+    border: 2px solid gray;
 }
 
 p {
     margin: 10px;
-    background: red;
+    background: lightgray;
+    font-weight: bold;
 }
 </style>

@@ -19,7 +19,7 @@ export default {
     return {
       pokemons,
       filter: {
-        // name: '',
+        name: '',
         type: '',
       },
       sort: {
@@ -45,7 +45,8 @@ export default {
     filteredPokemons() {
       return this.pokemons.filter(pokemon => {
         const hasType = !this.filter.type || pokemon.type_1.includes(this.filter.type);
-        return hasType;
+        const hasName = !this.filter.name || pokemon.pokemon.includes(this.filter.name);
+        return hasType && hasName;
       });
     },
     sortedPokemons() {
