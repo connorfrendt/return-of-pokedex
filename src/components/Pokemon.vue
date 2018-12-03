@@ -2,7 +2,7 @@
     <li>
         <img style="height: 150px" v-bind:src="pokemon.url_image"/>
         <h3> {{ pokemon.pokemon }} </h3>
-        <p>Attack: {{ pokemon.attack }} </p>
+        <p>Type: {{ pokemon.type_1 }} </p>
         <p>Defense: {{ pokemon.defense }} </p>
     </li>
 </template>
