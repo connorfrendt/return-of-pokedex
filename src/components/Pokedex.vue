@@ -6,16 +6,16 @@
     </ul>
 </template>
 
-<script>
+<script>``;
 import Pokemon from './Pokemon.vue';
 
 export default {
-    props: {
-        pokemons: Array
-    },
-    components: {
-        Pokemon
-    }
+  props: {
+    pokemons: Array
+  },
+  components: {
+    Pokemon
+  }
 };
 </script>
 

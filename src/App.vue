@@ -29,24 +29,24 @@ export default {
     Pokedex
   },
   computed: {
-      pokemonTypes() {
-        const types = [];
-        this.pokemons.forEach(pokemon => {
-          if(!types.includes(pokemon.type_1)) {
-            types.push(pokemon.type_1);
-          }
-        });
-        // console.log(types);
-        return types;
-      },
-      filteredPokemons() {
-        return this.pokemons.filter(pokemon => {
-          const hasName = !this.filter.name || pokemon.pokemon.includes(this.filter.name);
-          return hasName;
-        });
-      }
+    pokemonTypes() {
+      const types = [];
+      this.pokemons.forEach(pokemon => {
+        if(!types.includes(pokemon.type_1)) {
+          types.push(pokemon.type_1);
+        }
+      });
+      // console.log(types);
+      return types;
+    },
+    filteredPokemons() {
+      return this.pokemons.filter(pokemon => {
+        const hasName = !this.filter.name || pokemon.pokemon.includes(this.filter.name);
+        return hasName;
+      });
     }
-  };
+  }
+};
 
 </script>
 

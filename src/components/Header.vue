@@ -21,10 +21,10 @@
 
 <script>
 export default {
-    props: {
-        filter: Object,
-        types: Array
-    }
+  props: {
+    filter: Object,
+    types: Array
+  }
 };
 </script>
 
