@@ -22,10 +22,13 @@ export default {
         name: '',
         type: '',
         minAttack: '',
+        maxAttack: '',
+        minDefense: '',
+        maxDefense: '',
       },
       sort: {
-        field: 'name',
-        direction: 1
+        field: '',
+        direction: 0
       }
     };
   },
@@ -48,7 +51,10 @@ export default {
         const hasType = !this.filter.type || pokemon.type_1.includes(this.filter.type);
         const hasName = !this.filter.name || pokemon.pokemon.includes(this.filter.name);
         const hasMinAttack = !this.filter.minAttack || pokemon.attack >= this.filter.minAttack;
-        return hasType && hasName && hasMinAttack;
+        const hasMaxAttack = !this.filter.maxAttack || pokemon.attack <= this.filter.maxAttack;
+        const hasMinDefense = !this.filter.minDefense || pokemon.defense >= this.filter.minDefense;
+        const hasMaxDefense = !this.filter.maxDefense || pokemon.defense <= this.filter.maxDefense;
+        return hasType && hasName && hasMinAttack && hasMaxAttack && hasMinDefense && hasMaxDefense;
       });
     },
     sortedPokemons() {
@@ -78,5 +84,12 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+body {
+  background: url(./assets/pokemon_background.png);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover; 
 }
 </style>

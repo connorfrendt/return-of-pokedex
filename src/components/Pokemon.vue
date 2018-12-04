@@ -1,6 +1,6 @@
 <template>
-    <li>
-        <img style="height: 150px" v-bind:src="pokemon.url_image"/>
+    <li :style="{ background: pokemon.color_1 }">
+        <img v-bind:src="pokemon.url_image"/>
         <h3> {{pokemon.pokemon}}</h3>
         <p>Type: {{pokemon.type_1}}, {{pokemon.type_2}}</p>
         <p>Attack: {{pokemon.attack}}</p>
@@ -21,23 +21,28 @@ export default {
 
 <style>
 li {
-    border: 3px solid red;
+    border: 5px outset red;
+    border-radius: 20px;
     margin: 10px auto;
     padding: 0 30px;
     text-align: center;
 }
 
 img {
-    border: 2px dashed goldenrod;
+    height: 150px;
 }
 
 h3 {
-    border: 2px solid gray;
+    border: 5px outset gray;
+    background: white;
+    color: black
 }
 
 p {
     margin: 10px;
     background: lightgray;
     font-weight: bold;
+    border-radius: 10px;
+    padding: 5px;
 }
 </style>
