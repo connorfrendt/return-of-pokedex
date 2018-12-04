@@ -26,6 +26,7 @@ li {
     margin: 10px auto;
     padding: 0 30px;
     text-align: center;
+    box-shadow: 6px 6px 6px black;
 }
 
 img {
