@@ -25,6 +25,7 @@
                     Min:
                     <input type="number" step="10" placeholder="0" v-model="filter.minAttack">
                 </label>
+                <br />
                 <label>
                     Max:
                     <input type="number" step="10" placeholder="0" v-model="filter.maxAttack">
@@ -39,6 +40,7 @@
                     Min:
                     <input type="number" step="10" placeholder="0" v-model="filter.minDefense">
                 </label>
+                <br />
                 <label>
                     Max:
                     <input type="number" step="10" placeholder="0" v-model="filter.maxDefense">
@@ -49,6 +51,7 @@
             Sort By:
             <select v-model="sort.field">
                 <optgroup label="Select Stat">
+                    <option value="none">None</option>
                     <option value="attack">Attack</option>
                     <option value="defense">Defense</option>
                 </optgroup>
@@ -56,6 +59,7 @@
 
             <select v-model="sort.direction">
                 <optgroup label="Select Direction">
+                    <option value="0">None</option>
                     <option value="1">Ascending</option>
                     <option value="-1">Descending</option>
                 </optgroup>

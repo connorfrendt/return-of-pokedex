@@ -27,8 +27,8 @@ export default {
         maxDefense: '',
       },
       sort: {
-        field: '',
-        direction: 0
+        field: 'none',
+        direction: 0,
       }
     };
   },
@@ -48,7 +48,7 @@ export default {
     },
     filteredPokemons() {
       return this.pokemons.filter(pokemon => {
-        const hasType = !this.filter.type || pokemon.type_1.includes(this.filter.type);
+        const hasType = !this.filter.type || pokemon.type_1.includes(this.filter.type) || pokemon.type_2.includes(this.filter.type);
         const hasName = !this.filter.name || pokemon.pokemon.includes(this.filter.name);
         const hasMinAttack = !this.filter.minAttack || pokemon.attack >= this.filter.minAttack;
         const hasMaxAttack = !this.filter.maxAttack || pokemon.attack <= this.filter.maxAttack;
@@ -68,7 +68,6 @@ export default {
         if(a[field] < b[field]) {
           return -1 * direction;
         }
-
         return 0;
       });
     }
