@@ -1,23 +1,40 @@
 <template>
     <header>
-        <label>
-            Name:
-            <input type="text" placeholder="Pokemon Name" v-model="filter.name">
-        </label>
-        <label>
-            Type:
-            <select v-model="filter.type">
-                <option value="">All</option>
-                <option
-                    v-for="type in types"
-                    v-bind:key="type"
-                    v-bind:value="type">
-                    {{type}}
-                </option>
-            </select>
-        </label>
+        <div id="name-type">
+            <label>
+                Name:
+                <input type="text" placeholder="Pokemon Name" v-model="filter.name">
+            </label>
+            <label>
+                Type:
+                <select v-model="filter.type">
+                    <option value="">All</option>
+                    <option
+                        v-for="type in types"
+                        v-bind:key="type"
+                        v-bind:value="type">
+                        {{type}}
+                    </option>
+                </select>
+            </label>
+        </div>
 
         <div id="stat-filter">
+            <fieldset>
+                <legend>
+                    HP
+                </legend>
+                    <label>
+                        Min:
+                        <input type="number" step="10" placeholder="0" v-model="filter.minHP">
+                    </label>
+                        <br />
+                    <label>
+                        Max:
+                        <input type="number" step="10" placeholder="0" v-model="filter.maxHP">
+                    </label>
+            </fieldset>
+            
             <fieldset>
                 <legend>
                     Attack
@@ -94,28 +111,29 @@
                     </label>
             </fieldset>
         </div>
+        <div id="sort">
+            <label>
+                Sort By:
+                <select v-model="sort.field">
+                    <optgroup label="Select Stat">
+                        <option value="none">None</option>
+                        <option value="attack">Attack</option>
+                        <option value="defense">Defense</option>
+                        <option value="special_attack">Special Attack</option>
+                        <option value="special_defense">Special Defense</option>
+                        <option value="speed">Speed</option>
+                    </optgroup>
+                </select>
 
-        <label>
-            Sort By:
-            <select v-model="sort.field">
-                <optgroup label="Select Stat">
-                    <option value="none">None</option>
-                    <option value="attack">Attack</option>
-                    <option value="defense">Defense</option>
-                    <option value="spAtk">Special Attack</option>
-                    <option value="spDef">Special Defense</option>
-                    <option value="speed">Speed</option>
-                </optgroup>
-            </select>
-
-            <select v-model="sort.direction">
-                <optgroup label="Select Direction">
-                    <option value="0">None</option>
-                    <option value="1">Ascending</option>
-                    <option value="-1">Descending</option>
-                </optgroup>
-            </select>
-        </label>
+                <select v-model="sort.direction">
+                    <optgroup label="Select Direction">
+                        <option value="0">None</option>
+                        <option value="1">Ascending</option>
+                        <option value="-1">Descending</option>
+                    </optgroup>
+                </select>
+            </label>
+        </div>
     </header>
 </template>
 
@@ -138,8 +156,24 @@ header {
     border-radius: 20px;
 }
 
+#name-type {
+    display: inline-block;
+    margin: 10px auto;
+    padding: 10px;
+    background: rgba(50, 0, 0, 1);
+    border-radius: 10px;
+}
+
 #stat-filter {
     display: flex;
     justify-content: center;
+}
+
+#sort {
+    display: inline-block;
+    margin: 10px auto;
+    padding: 10px;
+    background: rgba(155, 0, 0, 1);
+    border-radius: 10px;
 }
 </style>
