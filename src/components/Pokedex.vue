@@ -72,7 +72,7 @@ ul {
   }
 
 .list-complete-item {
-  transition: 1s;
+  transition: .5s;
   display: inline-block;
 }
 
