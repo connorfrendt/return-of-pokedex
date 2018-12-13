@@ -117,6 +117,7 @@
                 <select v-model="sort.field">
                     <optgroup label="Select Stat">
                         <option value="none">None</option>
+                        <option value="hp">HP</option>
                         <option value="attack">Attack</option>
                         <option value="defense">Defense</option>
                         <option value="special_attack">Special Attack</option>

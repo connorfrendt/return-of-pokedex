@@ -32,6 +32,7 @@ export default {
         minSpeed: '',
         maxSpeed: '',
         minHP: '',
+        maxHP: '',
       },
       sort: {
         field: 'none',
@@ -58,6 +59,7 @@ export default {
         const hasType = !this.filter.type || pokemon.type_1.includes(this.filter.type) || pokemon.type_2.includes(this.filter.type);
         const hasName = !this.filter.name || pokemon.pokemon.includes(this.filter.name);
         const hasMinHP = !this.filter.minHP || pokemon.hp >= this.filter.minHP;
+        const hasMaxHP = !this.filter.maxHP || pokemon.hp <= this.filter.maxHP;
         const hasMinAttack = !this.filter.minAttack || pokemon.attack >= this.filter.minAttack;
         const hasMaxAttack = !this.filter.maxAttack || pokemon.attack <= this.filter.maxAttack;
         const hasMinDefense = !this.filter.minDefense || pokemon.defense >= this.filter.minDefense;
@@ -75,7 +77,7 @@ export default {
           && hasMinSpAtk && hasMaxSpAtk
           && hasMinSpDef && hasMaxSpDef
           && hasMinSpeed && hasMaxSpeed
-          && hasMinHP;
+          && hasMinHP && hasMaxHP;
       });
     },
     sortedPokemons() {

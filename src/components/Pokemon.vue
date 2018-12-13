@@ -6,16 +6,11 @@
                 :onClose="onClose"
                 :pokemon="pokemon" />
         </transition>
-        
+
         <li @click="handleClick" :style="{ background: pokemon.color_1 }">
             <img v-bind:src="pokemon.url_image"/>
             <h3> {{pokemon.pokemon}}</h3>
             <p>Type: {{pokemon.type_1}}, {{pokemon.type_2}}</p>
-            <p>Attack: {{pokemon.attack}}</p>
-            <p>Defense: {{pokemon.defense}}</p>
-            <p>Special Attack: {{pokemon.special_attack}}</p>
-            <p>Special Defense: {{pokemon.special_defense}}</p>
-            <p>Speed: {{pokemon.speed}}</p>
         </li>
     </div>
 </template>
