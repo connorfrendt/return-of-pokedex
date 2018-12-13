@@ -3,20 +3,16 @@
     <div class="content" @click.stop="">
       <button class="close" @click="onClose">X</button>
       <slot id="modal">
-        <div id="modal-img">
-          <img v-bind:src="pokemon.url_image"/>
-        </div>
-        <div id="modal-stat">
-          <p>#{{pokemon.species_id}}</p>
-          <p>Type: {{pokemon.type_1}}, {{pokemon.type_2}}</p>
-          <p>HP: {{pokemon.hp}}</p>
-          <p>Attack: {{pokemon.attack}}</p>
-          <p>Defense: {{pokemon.defense}}</p>
-          <p>Special Attack: {{pokemon.special_attack}}</p>
-          <p>Special Defense: {{pokemon.special_defense}}</p>
-          <p>Speed: {{pokemon.speed}}</p>
-          <p>Abilities: {{pokemon.ability_1}}/{{pokemon.ability_2}}</p>
-        </div>
+        <img v-bind:src="pokemon.url_image" style="height: 250px"/>
+        <p>#{{pokemon.species_id}}</p>
+        <p>Type: {{pokemon.type_1}}, {{pokemon.type_2}}</p>
+        <p>HP: {{pokemon.hp}}</p>
+        <p>Attack: {{pokemon.attack}}</p>
+        <p>Defense: {{pokemon.defense}}</p>
+        <p>Special Attack: {{pokemon.special_attack}}</p>
+        <p>Special Defense: {{pokemon.special_defense}}</p>
+        <p>Speed: {{pokemon.speed}}</p>
+        <p>Abilities: {{pokemon.ability_1}}/{{pokemon.ability_2}}</p>
       </slot>
     </div>
   </div>
@@ -58,7 +54,7 @@ export default {
 
 .content {
   position: relative;
-  background: whitesmoke;
+  background:-webkit-radial-gradient(rgb(255, 255, 255), rgb(0, 0, 0));
   padding: 40px;
   border: 5px outset black;
   border-radius: 15px;
