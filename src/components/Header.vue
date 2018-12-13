@@ -152,7 +152,7 @@ export default {
 header {
     background:-webkit-linear-gradient(bottom, rgb(0, 0, 0), rgb(255, 0, 0));
     color: white;
-    padding: 10px;
+    /* padding: 10px; */
     text-align: center;
     border-radius: 20px;
 }
